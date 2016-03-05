@@ -7,10 +7,10 @@
 		<link rel="stylesheet" type="text/css" href="/css/reset.css">
 		<link rel="stylesheet" type="text/css" href="/css/style.css">
 		<link rel="stylesheet" type="text/css" href="/css/slide.css">
-		<script type="text/javascript" src="/js/jquery.fancybox.js?v=2.1.5"></script>
+		<script type="text/javascript" src="/js/jquery.fancybox.js"></script>
 		<link rel="stylesheet" type="text/css" href="/css/jquery.fancybox.css?v=2.1.5" media="screen" />
 
-		<script type="text/javascript" src="js/script.js"></script>
+		<script type="text/javascript" src="/js/script.js"></script>
 		
 	</head>	
 	<body>
@@ -26,32 +26,32 @@
 			<?=$this->element('footer')?>	
 			<div class="mob_part">
 				<ul class="mob_ul">
-					<li ><a href="">Главная</a></li>
-					<li ><a href="">Новости</a></li>
+					<li ><a href="/"><?= __('Главная')?></a></li>
+					<li><a href="/<?=$lang?>news"><?= __('Новости')?></a></li>
 					<li class="m_sub ">
 						<p>Предприятия</p>
 							<ul class="m_undersub">
-								<li><a href="">Руководство</a></li>
-								<li><a href="">Лицензии и сертификаты</a></li>
-								<li><a href="">Вакансии</a></li>
-								<li><a href="">История</a></li>
+								<li><a href="/<?=$lang?>leaderships"><?= __('Руководство')?></a></li>
+								<li><a href="/<?=$lang?>certifications"><?= __('Лицензии и сертификаты')?></a></li>
+								<li><a href="/<?=$lang?>page/vacancy"><?= __('Вакансии')?></a></li>
+								<li><a href="/<?=$lang?>page/history"><?= __('История')?></a></li>
 							</ul>
 					</li>
-					<li><a href="">Продукция</a></li>
-					<li ><a href="">Партнеры</a></li>
+					<li><a href="/<?=$lang?>page/products"><?= __('Продукция')?></a></li>
+					<li><a href="/<?=$lang?>page/clents"><?= __('Клиенты')?></a></li>
 					<li class="m_sub">
 						<p>Галерея</p>
 							<ul class="m_undersub">
-								<li><a href="">Трудовые будни</a></li>
-								<li><a href="">Отдых</a></li>
-								<li><a href="">Спорт</a></li>
-								<li><a href="">Видео</a></li>
+								<li><a href="/<?=$lang?>albums/1"><?= __('Трудовые будни')?></a></li>
+								<li><a href="/<?=$lang?>albums/2"><?= __('Отдых')?></a></li>
+								<li><a href="/<?=$lang?>albums/3"><?= __('Спорт')?></a></li>
+								<li><a href="/<?=$lang?>videos"><?= __('Видео')?></a></li>
 							</ul>
 					</li>
-					<li><a href="">Контакты</a></li>
-					<li><a href="">Структура 
+					<li><a href="/<?=$lang?>page/contacts"><?= __('Контакты')?></a></li>
+					<li><a href="/<?=$lang?>page/structure">Структура 
 					отрасли</a></li>
-					<li ><a href="">Обратный звонок</a></li
+					<li ><a href="#modal1" class="open_modal">Обратный звонок</a></li
 				</ul>
 				<div class="int_row mob_row">
 							<button type="submit" class="sub_but"></button>
@@ -62,135 +62,17 @@
 				<div class="mob_close"></div>
 			</div>
 		</div>
-		<script type="text/javascript" src="js/slick.min.js"></script>
-		<script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-		<script type="text/javascript">
-		 $(document).ready(function() {
-			$('.multiple-items').slick({
-			  infinite: true,
-			  slidesToShow: 3,
-			  slidesToScroll: 3,
-			   responsive: [
-			    {
-			      breakpoint: 1240,
-			      settings: {
-			        slidesToShow: 2,
-			        slidesToScroll: 2
-			      }
-			    },
-			    {
-			      breakpoint: 660,
-			      settings: {
-			        slidesToShow: 1,
-			        slidesToScroll: 1
-			      }
-			    }
-			  ]
-			});			
-			$('.awards_c').slick({
-			  infinite: true,
-			  slidesToShow: 3,
-			  slidesToScroll: 3,
-			   responsive: [
-			    {
-			      breakpoint: 1240,
-			      settings: {
-			        slidesToShow: 2,
-			        slidesToScroll: 2
+		<div id="modal1" class="modal_div"> <!-- скрытый див с уникальным id = modal1 -->
+		<span class="modal_close"></span>
+			<div class="logo"><img src="img/logo.png" alt=""></div>
+		<div class="title_z">Обратный звонок</div>
 
-			      }
-			    },
-			    {
-			      breakpoint: 900,
-			      settings: {
-			        slidesToShow: 3,
-			        slidesToScroll: 2
-
-			      }
-			    },
-			    {
-			      breakpoint: 660,
-			      settings: {
-			        slidesToShow: 2,
-			        slidesToScroll: 1
-			      }
-			    },
-			    {
-			      breakpoint: 450,
-			      settings: {
-			        slidesToShow: 1,
-			        slidesToScroll: 1
-			      }
-			    }
-			  ]
-			});
-			$('.partners-items').slick({
-			  infinite: true,
-			  slidesToShow: 5,
-			  slidesToScroll: 2,
-			  responsive: [
-			    {
-			      breakpoint: 1240,
-			      settings: {
-			        slidesToShow: 4,
-			        slidesToScroll: 4
-			      }
-			    },
-			    {
-			      breakpoint: 660,
-			      settings: {
-			        slidesToShow: 2,
-			        slidesToScroll: 1
-
-			      }
-			    },
-			    {
-			      breakpoint: 450,
-			      settings: {
-			        slidesToShow: 1,
-			        slidesToScroll: 1
-			      }
-			    }
-			    ]
-			});	
-			$('.sertificates-items	').slick({
-			  infinite: true,
-			  slidesToShow: 8,
-			  slidesToScroll: 2,
-			  responsive: [
-			    {
-			      breakpoint: 1240,
-			      settings: {
-			        slidesToShow: 6,
-			        slidesToScroll: 3
-			      }
-			    },
-			    {
-			      breakpoint: 900,
-			      settings: {
-			        slidesToShow: 4,
-			        slidesToScroll: 2
-
-			      }
-			    },
-			    {
-			      breakpoint: 660,
-			      settings: {
-			        slidesToShow: 3,
-			        slidesToScroll: 1
-
-			      }
-			    },
-			    {
-			      breakpoint: 450,
-			      settings: {
-			        slidesToShow: 2,
-			        slidesToScroll: 1
-			      }
-			    }
-			    ]
-			});						
-		 })
-		</script>
+			<form method="POST" name="form1" action="form.php" >
+				<input  name="name"  maxlength="200" class="modal_f" type="text" size="1"  required placeholder="ФИО*"/>
+				<input  name="number"  maxlength="200" class="modal_f" type="text" size="1"  required placeholder="Номер*"/>
+				<button type="submit"  name="submit1" >Отправить</button>
+			</form>
+		</div>
+		<div id="overlay"></div>
 	</body>
 </html>

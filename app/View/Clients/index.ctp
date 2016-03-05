@@ -1,6 +1,20 @@
-<div class="mbg"></div>
-<section class="cr bg_w">	
-	<div class="box content">
+<asside class="left_asside">
+	<div class="compani_item_title">
+		<h2><?php echo __('Предприятие') ?></h2>
+	</div>
+	<ul class="sidebar_nav">
+		<li <?php if( !$this->request->query('category') ) {echo "class='active'";} ?>>
+			<a href="/<?=$lang?>news">
+			<?php echo __('Новости предприятия')?></a>
+		</li>
+		<li <?php if( $this->request->query('category') == 'otrasl' ) {echo "class='active'";} ?>>
+			<a href="/<?=$lang?>news?category=otrasl">
+				<?php echo __('Новости отрасли')?></a>
+		</li>
+	</ul>
+</asside>
+<div class="content_container">
+	<div class="content">
 		<div class="gallery">
 			<h2><?php echo __('Клиенты') ?></h2>
 			<ul class="gallery_ul">
@@ -16,4 +30,4 @@
 			</ul>
 		</div>	
 	</div>
-</section>				
+</div>			

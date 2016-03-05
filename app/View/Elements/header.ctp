@@ -30,7 +30,7 @@
 					<div class="stuc_call_back">
 						<a href="/<?=$lang?>page/structure" class="structure"><?= __('Структура
 					отрасли')?></a>
-											<a href="" class="call_back open_modal"><?= __('Обратный звонок')?></a>
+											<a href="#modal1" class="open_modal call_back "><?= __('Обратный звонок')?></a>
 					</div>
 					<div class="r_down">
 							<nav>
@@ -49,7 +49,7 @@
 										</div>
 									</li>
 									<li><a href="/<?=$lang?>page/products"><?= __('Продукция')?></a></li>
-									<li><a href="#"><?= __('Клиенты')?></a></li>
+									<li><a href="/<?=$lang?>page/clents"><?= __('Клиенты')?></a></li>
 									<li class="sub">
 										<a ><?= __('Галерея')?></a>
 										<div class="frame">
