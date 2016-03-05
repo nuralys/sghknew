@@ -1082,8 +1082,8 @@ header figure {
         padding:0 20px;
     }
 	.left_asside {
-    width: 80%;
-	margin-bottom:20px;
+    width: 100%;
+    margin-bottom: 20px;
 }
 .content_container {
     width: 99.5%;
