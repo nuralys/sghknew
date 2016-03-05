@@ -63,8 +63,8 @@
 			</div>
 		</div>
 		<div id="modal1" class="modal_div"> <!-- скрытый див с уникальным id = modal1 -->
-		<span class="modal_close"></span>
-			<div class="logo"><img src="img/logo.png" alt=""></div>
+		<span class="modal_close">*</span>
+			<div class="logo"><img src="/img/logo.png" alt=""></div>
 		<div class="title_z">Обратный звонок</div>
 
 			<form method="POST" name="form1" action="form.php" >

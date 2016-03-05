@@ -1147,7 +1147,8 @@ header figure {
     overflow: hidden;
     position: relative;
     display: block;
-    font-family: "NeueCyr-Roman";
+    font-family: "CalibriBold";
+    margin-top: 10px;
 }
 .title_z span {
     display: block;
