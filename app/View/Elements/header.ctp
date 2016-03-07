@@ -11,12 +11,12 @@
 
 						<div class="r_t">
 							<ul class="lang">
-								<li><a href="#">kz</a></li>
-								<li class="active"><a href="#">ru</a></li>
+								<li <?php echo (isset($this->request->params['language']) || $this->request->params['language']=='kz') ? "class='active'" : "" ?>><a href="/kz">kz</a></li>
+								<li <?php echo (!isset($this->request->params['language']) || $this->request->params['language']!='kz') ? "class='active'" : "" ?>><a href="/ru">ru</a></li>
 							</ul>
 							<select class="lang_m">
-								<option>Каз</option>
-								<option>Рус</option>
+								<option <?php echo (isset($this->request->params['language']) || $this->request->params['language']=='kz') ? "selected" : "" ?>>Каз</option>
+								<option <?php echo (!isset($this->request->params['language']) || $this->request->params['language']!='kz') ? "selected" : "" ?>>Рус</option>
 							</select>
 							<div class="int_row clearfix">
 							<button type="submit" class="sub_but"></button>
