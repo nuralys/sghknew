@@ -1,38 +1,43 @@
-<div class="title">
+<asside class="left_asside">
+	<div class="compani_item_title">
+		<h2><?php echo __('Предприятие') ?></h2>
+	</div>
+	<ul class="sidebar_nav">
+		<li>
+			<a href="/<?=$lang?>news">
+			<?php echo __('Новости предприятия')?></a>
+		</li>
+		<li>
+			<a href="/<?=$lang?>news?category=otrasl">
+				<?php echo __('Новости отрасли')?></a>
+		</li>
+	</ul>
+</asside>
+<div class="content_container">
+	<div class="content">
 	<h1>
 		<?php echo __('Результаты поиска')?>
 	</h1>
-</div>
-<div class="min_title">
-	<?php echo __('Введите ключевые слова для поиска')?>
-</div>				
-<div class="search pages">
-	<form action="/news/search/">
-		<input placeholder="<?php echo __('Поиск')?>..." type="text" name="q">
-		<div class="sub_b pages">
-			<button type="submit"></button>
-		</div>
-	</form>
-</div>
-<div class="news_container">
-	<ul class="search_list">
-	<?php if(is_array($search_res)): ?>
-		<?php if(empty($search_res)): ?>
-	<li><?php echo __('По данному запросу 0 результатов')?>...</li>
-		<?php endif ?>
-		<?php foreach($search_res as $item): ?>
+		<ul class="news_list_item">
+		<?php //debug($search_res) ?>
+		<?php if(is_array($search_res)): ?>
+			<?php if(empty($search_res)): ?>
+				<li><?php echo __('По данному запросу 0 результатов')?>...</li>
+			<?php endif ?>
+			<?php foreach($search_res as $item): ?>
 			<li>
-			<a href="/news/view/<?=$item['news']['id'] ?>"class="search_title">
-				<?=$item['news']['title'] ?>
-			</a>
-			<p>
-				<?= $this->Text->truncate(strip_tags($item['news']['body']), 55, array('ellipsis' => '...', 'exact' => true)) ?>
-			</p>
-			<div class="date_min"><?php echo $this->Time->format($item['news']['date'], '%d.%m.%Y', 'invalid'); ?></div>
+				<div class="date">
+					<?php echo $this->Time->format($item['news']['date'], '%d.%m.%Y', 'invalid'); ?>
+				</div>
+				<a  href="/<?=$lang?>news/view/<?=$item['news']['id']?>" class="title_news__item">
+					<?=$item['news']['title'] ?>
+				</a>
+				<p><?= $this->Text->truncate(strip_tags($item['news']['body']), 225, array('ellipsis' => '...', 'exact' => true)) ?></p>
 			</li>
-		<?php endforeach ?>
-<?php else: ?>
-	<li><?php echo $search_res ?></li>
-<?php endif ?>
-	</ul>
+			<?php endforeach ?>
+			<?php else: ?>
+				<li><?php echo $search_res ?></li>
+			<?php endif ?>
+		</ul>
+	</div>
 </div>

@@ -32,6 +32,7 @@
 	Router::connect('/albums/*', array('controller' => 'albums', 'action' => 'index'));
 	Router::connect('/gallery/*', array('controller' => 'gallery', 'action' => 'index'));
 	Router::connect('/news', array('controller' => 'news', 'action' => 'index'));
+	Router::connect('/search/*', array('controller' => 'news', 'action' => 'search'));
 	Router::connect('/page/*', array('controller' => 'pages', 'action' => 'page'));
 	Router::connect('/contacts', array('controller' => 'contacts', 'action' => 'index'));
 	Router::connect('/:language', array('controller' => 'pages', 'action' => 'index'),array('language' => '[a-z]{2}'));
@@ -42,6 +43,10 @@
 	// );
 	Router::connect('/:language/page/*', 
 		array('controller' => 'pages', 'action' => 'page'),
+		array('language' => '[a-z]{2}')
+	);
+	Router::connect('/:language/search/*', 
+		array('controller' => 'news', 'action' => 'search'),
 		array('language' => '[a-z]{2}')
 	);
 	Router::connect('/:language/albums/*', 

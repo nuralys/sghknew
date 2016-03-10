@@ -8,21 +8,21 @@
 					</figure>
 
 					<div class="right_t">
-
 						<div class="r_t">
 							<ul class="lang">
-								<li <?php echo (isset($this->request->params['language']) || $this->request->params['language']=='kz') ? "class='active'" : "" ?>><a href="/kz">kz</a></li>
-								<li <?php echo (!isset($this->request->params['language']) || $this->request->params['language']!='kz') ? "class='active'" : "" ?>><a href="/ru">ru</a></li>
+								<li <?php echo (Configure::read('Config.language')=='kz') ? "class='active'" : "" ?>><a href="/kz">kz</a></li>
+								<li <?php echo (Configure::read('Config.language')=='ru') ? "class='active'" : "" ?>><a href="/ru">ru</a></li>
 							</ul>
 							<select class="lang_m">
-								<option <?php echo (isset($this->request->params['language']) || $this->request->params['language']=='kz') ? "selected" : "" ?>>Каз</option>
-								<option <?php echo (!isset($this->request->params['language']) || $this->request->params['language']!='kz') ? "selected" : "" ?>>Рус</option>
+								<option <?php echo (Configure::read('Config.language')=='kz') ? "selected" : "" ?>>Каз</option>
+								<option <?php echo (Configure::read('Config.language')=='ru') ? "selected" : "" ?>>Рус</option>
 							</select>
 							<div class="int_row clearfix">
+							<form action="/search" method="GET">
 							<button type="submit" class="sub_but"></button>
-							<input type="text" name="data[Credit][name]" placeholder="<?= __('Поиск по сайту')?>">
+							<input type="text" name="q" placeholder="<?= __('Поиск по сайту')?>">
 							<span></span>
-
+						</form>
 						</div>
 						</div>
 						
@@ -49,7 +49,7 @@
 										</div>
 									</li>
 									<li><a href="/<?=$lang?>page/products"><?= __('Продукция')?></a></li>
-									<li><a href="/<?=$lang?>page/clents"><?= __('Клиенты')?></a></li>
+									<li><a href="/<?=$lang?>clients"><?= __('Клиенты')?></a></li>
 									<li class="sub">
 										<a ><?= __('Галерея')?></a>
 										<div class="frame">

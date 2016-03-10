@@ -127,7 +127,7 @@ class NewsController extends AppController{
 		}
 		$title_for_layout = 'Поиск';
 		$search_res = $this->News->query("SELECT * FROM news 
-			WHERE news.body LIKE '%{$search}%'");
+			WHERE news.body LIKE '%{$search}%' ORDER BY news.date DESC");
 		$this->set(compact('search_res', 'title_for_layout'));
 	}
 
